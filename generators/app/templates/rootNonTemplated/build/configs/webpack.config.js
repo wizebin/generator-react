@@ -92,6 +92,9 @@ module.exports = {
     hot: true,
     port: 9999,
     open: true,
+    historyApiFallback: {
+      index: 'index.html'
+    },
     onListening: function(server) {
       const port = server.listeningApp.address().port;
       console.log('Listening on port:', port);
