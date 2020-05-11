@@ -21,11 +21,24 @@ module.exports = {
           }
         }
       }, {
+        test: /\.module\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true
+            }
+          }
+        ],
+      }, {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'
-        ]
+        ],
+        exclude: /\.module\.css$/
       }, {
         test: /\.(woff|woff2|eot|ttf|svg|png|jpg|jpeg|mp3|mp4)$/,
         use: {
